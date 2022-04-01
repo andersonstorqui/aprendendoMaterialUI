@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Default } from "../src/templates/Default";
+import { Page } from "../src/templates/Page";
 import { Customer } from "./pages/Customer";
 
 function App() {
@@ -9,10 +10,10 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Page title="Home" Component={Home} />
           </Route>
           <Route path="/customer">
-            <Customer />
+            <Page title="Clientes" Component={Customer} />
           </Route>
         </Switch>
       </Router>
