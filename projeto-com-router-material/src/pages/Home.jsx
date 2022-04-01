@@ -1,6 +1,5 @@
-import { Header } from "../partials/Header/Header";
 
 export const Home = () => {
 
-    return <Header />
+    return <h1>HOME</h1>
 }
