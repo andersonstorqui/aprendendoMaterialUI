@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react"
 import HomeIcon from '@mui/icons-material/Home';
@@ -49,11 +49,11 @@ export const Header = () => {
                 </ListItem>
                 <ListItem button onClick={() => handleMenuClick("/customer")}>
                     <ListItemIcon><GroupAddIcon /></ListItemIcon>
-                    <ListItemText>Cadastro de clientes</ListItemText>
-                </ListItem>
-                <ListItem button onClick={() => handleMenuClick("/client")}>
-                    <ListItemIcon><PersonIcon /></ListItemIcon>
                     <ListItemText>Lista de clientes</ListItemText>
+                </ListItem>
+                <ListItem button onClick={() => handleMenuClick("/customer/add")}>
+                    <ListItemIcon><PersonIcon /></ListItemIcon>
+                    <ListItemText>Cadastro de clientes</ListItemText>
                 </ListItem>
             </Drawer>
         </>

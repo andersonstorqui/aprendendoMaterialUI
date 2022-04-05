@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 import { CardCustomer } from "../components/CardCustomer"
 
 
-export const Customer = () => {
+export const CustomerList = () => {
 
     const [users, setUsers] = useState([])
 
@@ -15,7 +15,6 @@ export const Customer = () => {
         axios.get("https://reqres.in/api/users").then((res) => {
             setUsers([...res.data.data])
         })
-        // console.log(users)
     }, [])
 
 

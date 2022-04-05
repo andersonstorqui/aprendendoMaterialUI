@@ -39,7 +39,6 @@ export const CardCustomer = ({
     }
 
     const handleConfirmModal = (id) => {
-        console.log(typeof id, "HandlreConfirmModal")
         handleRemoverCustomer(id)
     }
 
