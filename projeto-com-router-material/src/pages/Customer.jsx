@@ -12,23 +12,34 @@ export const Customer = () => {
     const [users, setUsers] = useState([])
 
     useEffect(() => {
-        axios.get("https://reqres.in/api/users?page=2").then((res) => {
+        axios.get("https://reqres.in/api/users").then((res) => {
             setUsers([...res.data.data])
         })
         // console.log(users)
     }, [])
 
 
+    const handleRemoverCustomer = ({ id }) => {
+        axios.delete(`https://reqres.in/api/users/:${id}`)
+        console.log(id)
+            .then(() => {
+                const newCustomers = users.filter(user => user.id !== id)
+                // setUsers(newCustomers)
+            })
+
+
+    }
+
+
 
     return (
         <Grid container spacing={6}>
             {
-                users.map(item => {
+                users.map((item, index) => {
                     return (
                         <Grid item xs={12} sm={6} md={6} >
                             <Paper>
-                                <CardCustomer nome={item.first_name} sobrenome={item.last_name} email={item.email} avatar={item.avatar} />
-
+                                <CardCustomer key={index} nome={item.first_name} sobrenome={item.last_name} email={item.email} avatar={item.avatar} onRemoverCustomer={handleRemoverCustomer} id={item.id} />
                             </Paper>
                         </Grid>
                     )

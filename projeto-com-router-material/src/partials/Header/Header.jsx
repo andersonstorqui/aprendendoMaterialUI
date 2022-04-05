@@ -5,6 +5,7 @@ import { useState } from "react"
 import HomeIcon from '@mui/icons-material/Home';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import { useHistory } from 'react-router-dom';
+import PersonIcon from '@mui/icons-material/Person';
 
 export const Header = () => {
 
@@ -49,6 +50,10 @@ export const Header = () => {
                 <ListItem button onClick={() => handleMenuClick("/customer")}>
                     <ListItemIcon><GroupAddIcon /></ListItemIcon>
                     <ListItemText>Cadastro de clientes</ListItemText>
+                </ListItem>
+                <ListItem button onClick={() => handleMenuClick("/client")}>
+                    <ListItemIcon><PersonIcon /></ListItemIcon>
+                    <ListItemText>Lista de clientes</ListItemText>
                 </ListItem>
             </Drawer>
         </>
