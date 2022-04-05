@@ -19,12 +19,11 @@ export const Customer = () => {
     }, [])
 
 
-    const handleRemoverCustomer = ({ id }) => {
-        axios.delete(`https://reqres.in/api/users/:${id}`)
-        console.log(id)
+    const handleRemoverCustomer = (id) => {
+        axios.delete(`https://reqres.in/api/users/${id}`)
             .then(() => {
                 const newCustomers = users.filter(user => user.id !== id)
-                // setUsers(newCustomers)
+                setUsers(newCustomers)
             })
 
 
@@ -39,7 +38,7 @@ export const Customer = () => {
                     return (
                         <Grid item xs={12} sm={6} md={6} >
                             <Paper>
-                                <CardCustomer key={index} nome={item.first_name} sobrenome={item.last_name} email={item.email} avatar={item.avatar} onRemoverCustomer={handleRemoverCustomer} id={item.id} />
+                                <CardCustomer key={index} nome={item.first_name} sobrenome={item.last_name} email={item.email} avatar={item.avatar} handleRemoverCustomer={handleRemoverCustomer} id={item.id} />
                             </Paper>
                         </Grid>
                     )

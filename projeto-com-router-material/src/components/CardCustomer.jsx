@@ -29,7 +29,7 @@ export const CardCustomer = ({
     sobrenome,
     email,
     avatar,
-    onRemoverCustomer,
+    handleRemoverCustomer,
 }) => {
 
     const [openModal, setOpenModal] = useState(false)
@@ -39,10 +39,11 @@ export const CardCustomer = ({
     }
 
     const handleConfirmModal = (id) => {
-        onRemoverCustomer(id)
+        console.log(typeof id, "HandlreConfirmModal")
+        handleRemoverCustomer(id)
     }
 
-    const handleRemoverCadastro = () => {
+    const handleRemoverCadastro = (id) => {
         handleToggleModal()
     }
     return (
