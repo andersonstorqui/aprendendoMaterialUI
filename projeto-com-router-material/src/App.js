@@ -6,8 +6,8 @@ import { Customer } from "./pages/Customer";
 
 function App() {
   return (
-    <Default>
-      <Router>
+    <Router>
+      <Default>
         <Switch>
           <Route exact path="/">
             <Page title="Home" Component={Home} />
@@ -16,8 +16,8 @@ function App() {
             <Page title="Clientes" Component={Customer} />
           </Route>
         </Switch>
-      </Router>
-    </Default>
+      </Default>
+    </Router>
   );
 }
 

@@ -22,7 +22,7 @@ const theme = createTheme({
 export const Page = ({ title, Component }) => {
     return (
         <>
-            <Typography variant="h2" >
+            <Typography variant="h3" >
                 {title}
             </Typography>
             <Component />
